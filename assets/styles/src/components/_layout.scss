@@ -1,0 +1,1082 @@
+.b-hero__main img {
+  animation: jump 2s ease-in-out;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  font: 16px/1.25 "Proxima Nova", "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $textColor;
+}
+h2 {
+  font-weight: 300;
+  font-size: 36px;
+  color: $headingColor;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: $headingColor;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: $linkColor;
+
+  &:hover {
+    color: $linkColor + 30;
+    text-decoration: none;
+  }
+  &:active {
+    color: $linkColor + 30;
+    outline:none;
+  }
+  &:focus {
+    color: $linkColor + 30;
+    outline: none;
+    text-decoration: none;
+  }
+}
+.button {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: $button-padding;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 0.075em;
+  background: transparent;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
+  &__getStarted {
+    background: $getStartedColor;
+    
+    &:hover {
+      background: $getStartedColor + 30;
+    }
+  }
+
+  &__blue {
+    background-color: $linkColor;
+    padding-left: 28px;
+    padding-right: 28px;
+    margin-bottom: 20px;
+
+    &:hover {
+      background-color: $linkColor + 30;
+      color: #ffffff;
+    }
+  }
+
+  &__getStartedTrans {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &__mailto{
+    background: #fff;
+    color:$primaryColor;
+    font-size:18px;
+    text-transform:none;
+    letter-spacing:normal;
+    
+    &:hover,
+    &:focus {
+      color: $primaryColor + 25;
+    }
+  }
+}
+
+.b-brand{
+  float: left;
+
+  &__header {
+    color: #ffffff;
+    font-size:20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom:0;
+    margin-top: 0;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 48px;
+      height: 54px;
+      margin: 0 12px 0px 0;
+      background: transparent url("./assets/images/mobiamo_logo_white.svg") no-repeat center center;
+      vertical-align: middle;
+    }
+  }
+}
+.b-brand__header.brand-blue::before {
+  background: transparent url("./assets/images/mobiamo_logo_blue.svg") no-repeat center center;
+}
+.b-mainNav {
+  padding: 12px 50px 4px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.5s ease;
+  &.mainNavOpen {
+    background-color: #ffffff;
+    transition: all 0.5s ease;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.15);
+    .l-login span::before {
+      color: $headingColor;
+    }
+    .l-login ul li a {
+      color: $headingColor;
+      font-weight: 700;
+    }
+  }
+}
+.l-login {
+  ul {
+    li {
+      display: inline-block;
+      &:last-child a {
+        margin-right: 0;
+        padding-right: 0;
+      }
+      a {
+        display: block;
+        color: #ffffff;
+        opacity: 0.5;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 700;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @include phone {
+    ul {
+      background-color: #ffffff;
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 70px;
+      left: 0;
+      z-index: 10;
+      li {
+        display: block;
+        a {
+          color: $headingColor;
+          font-size: 18px;
+          font-weight: 700;
+          padding: 16px 20px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+.burger::before {
+  content: "\f0c9";
+  font-family: "Font Awesome";
+  display: inline-block;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+}
+.close::before {
+  content: "\f00d";
+  font-family: "Font Awesome";
+  display: inline-block;
+  color: $headingColor;
+  font-size: 32px;
+  cursor: pointer;
+}
+.b-hero {
+  width:100%;
+  height: auto;
+  min-height: 720px;
+  background: $heroGrad;
+  padding-top: 100px;
+  position: relative;
+  ul {
+    display: inline-block;
+    @include phone {
+      display: none;
+    }
+  }
+  ul + a {
+    margin-left: 40px;
+    @include phone {
+      display: inline-block;
+    }
+  }
+  .container {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  &__main {
+    margin-top: 6vmax;
+    .button__getStarted {
+      padding: 18px 60px;
+    }
+  }
+  &__heading {
+    font: 36px/1.25 "Proxima Nova", "Open Sans", sans-serif;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 5vw;
+    &-paragraph{
+      font-size: 18px;
+      color: #ffffff;
+      opacity: 0.5;
+    }
+  }
+}
+.b-hero-about {
+  height: 720px;
+  background: url("./assets/images/hong_kong.png") no-repeat center center;
+  background-size: cover;
+}
+.b-hero-coverage{
+  background: $heroGrad;
+  background-size: cover;
+  overflow-y: hidden;
+  h1 {
+    margin-top: 0;
+    line-height: 1;
+  }
+}
+.b-implement {
+  margin: 60px 0 100px;
+}
+.b-partners__pic {
+  padding: 20px 30px;
+  margin: 0 20px;
+  background-size: contain;
+  background-color: $partnersBgColor;
+  opacity: 0.4;
+  @include phone {
+    margin: 0;
+  }
+}
+
+@each $partner in $partners {
+  .b-partners__#{$partner} {
+    background: url("./assets/images/partner_#{$partner}.png") no-repeat center center;
+    background-size: contain;
+  }
+}
+@each $partner_white in $partners_white {
+  .b-partners__#{$partner_white} {
+    background: url("./assets/images/partner_#{$partner_white}.png") no-repeat center center;
+    background-size: contain;
+  }
+}
+
+.b-partners .b-partners__bandai{
+  min-width: 67px;
+  min-height: 44px;
+}
+
+.b-partners .b-partners__sega_white {
+  min-width: 95px;
+  min-height: 30px;
+}
+
+.b-partners .b-partners__boyaa, .b-partners .b-partners__boyaa_white {
+  min-width: 101px;
+  min-height: 35px;  
+}
+
+.b-partners .b-partners__iver, .b-partners .b-partners__iver_white {
+  min-width: 152px;
+  min-height: 46px;  
+}
+
+.b-partners .b-partners__kog, .b-partners .b-partners__kog_white {
+  min-width: 92px;
+  min-height: 38px;  
+}
+
+.b-partners .b-partners__huawei, .b-partners .b-partners__huawei_white {
+  min-width: 45px;
+  min-height: 45px;  
+}
+
+.b-partners {
+  background-color: $partnersBgColor;
+  padding: 28px 0 ;
+  article {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__heading {
+    color:#757575;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 0;
+  }
+  @include phone {
+    article {
+      flex-wrap: wrap;
+      height: 160px;
+    }
+    &__heading {
+      width:100%;
+      display: block;
+      text-align: center;
+      flex-basis: 100%;
+    }
+    &__bandai {
+      flex-basis: 50%;
+      background-size: 51px 33px;
+    }
+    &__iver {
+      flex-basis: 50%;
+      order:1;
+      background-size: 117px 35px;
+    }
+    &__kog {
+      order:2;
+      flex-basis: 20%;
+      background-size: 72px 29px;
+    }
+    &__boyaa {
+      order:2;
+      flex-basis: 23%;
+      background-size: 78px 27px;
+    }
+    &__huawei {
+      order:3;
+      flex-basis: 30%;
+      background-size: 34px;
+    }
+  }
+}
+
+.b-partners-carrier-wrap{
+  background-color: rgba(242, 244, 245, 0.1);
+  padding: 28px 0;
+}
+
+.b-partners-carrier{
+  background: $heroGrad;
+  position: absolute;
+  bottom:0;
+  width:100%;
+  z-index: 3;
+}
+
+.b-partners.b-partners-carrier{
+  padding:0;
+}
+
+.b-partners-carier__paragraph{
+  color:#fff;
+  font-size:14px;
+  text-align: center;
+  margin-bottom: 36px;
+  margin-top: 0;
+}
+
+.carousel-controls {
+  border: 1px solid $borderColor;
+  border-radius: 3px;
+  width: 302px;
+  margin: 100px auto 20px;
+  li {
+    display: block;
+    font-size: 14px;
+    padding: 10px 20px;
+    float: left;
+    width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    &::before {
+      content:"";
+      display: block;
+      position: absolute;
+      top: -50px;
+      left: 22px;
+      width: 50px;
+      height: 40px;
+    }
+  }
+  .active-btn {
+    background: $primaryColor;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  .carousel-btn- {
+    &a::before { background: transparent url('./assets/images/home-mac.svg') no-repeat center center; }
+    &b::before { background: transparent url('./assets/images/home-ios.svg') no-repeat center center; }
+    &c::before { background: transparent url('./assets/images/home-android.svg') no-repeat center center; }
+  }
+  .active-btn.carousel-btn- {
+    &a::before { background: transparent url('./assets/images/home-mac_selected.svg') no-repeat center center; }
+    &b::before { background: transparent url('./assets/images/home-ios_active.svg') no-repeat center center; }
+    &c::before { background: transparent url('./assets/images/home-android_active.svg') no-repeat center center; }
+  }
+}
+.carousel-figures {
+  div {
+    background-color: transparent;
+    width:100%;
+    height: 400px;
+  }
+  .carousel-figure- {
+    &a-tab {
+      background: url("./assets/images/macbook.png") no-repeat center center;
+      background-size: contain;
+    }
+    &b-tab {
+      background: url("./assets/images/iphone.png") no-repeat center center;
+      background-size: contain;
+    }
+    &c-tab {
+      background: url("./assets/images/nexus6.png") no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+.carousel-descr {
+  line-height: 2;
+  @include phone{
+    text-align: center;
+  }
+}
+.b-mobileFlaw {
+  border-top: 1px solid rgba(27, 28, 31, 0.1);
+  border-bottom: 1px solid #ffffff;
+  margin-top: 100px;
+  padding-top: 100px;
+  background-color: #f2f4f5;
+  position: relative;
+  p {
+    line-height: 2;
+  }
+}
+.b-mobileFlaw__line{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  border-right: 1px solid rgba(27, 28, 31, 0.1);
+  
+}
+.js-mobileFlaw {
+  background-size: contain;
+  z-index: 1;
+  width: 225px;
+  height: 240px;
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 112.5px);
+  &.step1 {
+    background: transparent url("./assets/images/1@2x.png") no-repeat center center;
+    background-size: contain;
+    animation: step-1 20s linear infinite;
+  }
+  &.step2 {
+    background: transparent url("./assets/images/2@2x.png") no-repeat center center;
+    background-size: contain;
+    animation: step-2 20s linear infinite;
+  }
+  &.step3 {
+    background: transparent url("./assets/images/3@2x.png") no-repeat center center;
+    background-size: contain;
+    animation: step-3 20s linear infinite;
+  }
+  &.step4 {
+    background: transparent url("./assets/images/4@2x.png") no-repeat center center;
+    background-size: contain;
+    animation: step-4 20s linear infinite;
+  }
+}
+.b-mobileFlaw__image {
+  position: relative;
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+.b-map {
+  background: $heroGrad;
+  padding: 100px 0 50px;
+  h2 {
+    color:#fff;
+  }
+  p {
+    color: #ffffff;
+    opacity: 0.5;
+    line-height: 2;
+  }
+  &__link {
+    color: #ffffff;
+    background: $primaryColor url("./assets/images/arrow.png") no-repeat 85% center;
+    display: block;
+    border-radius: 3px;
+    padding: 10px 20px;
+    width: 250px;
+    font-size: 14px;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  &__left {
+    border-right: 1px solid #ffffff;
+    padding: 18px 0;
+  }
+  @include phone {
+    &__left {
+      border: none;
+    }
+  }
+  &__map {
+    background: transparent url("./assets/images/map.svg") no-repeat center center;
+    background-size: contain;
+    display: block;
+    margin: 40px auto;
+    width: 820px;
+    max-width: 100%;
+    height: 450px;
+  }
+}
+.b-pluses {
+  margin: 100px 0 162px;
+  p {
+    line-height: 2;
+    position: relative;
+    padding: 18px 0;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 60px;
+      background-color: $textColor;
+    }
+  }
+  &__imageWrap {
+    height: 50px;
+      img{
+          width:60px;
+      }
+  }
+}
+.b-graph {
+  background: url("./assets/images/graf.png") no-repeat center center;
+  background-size: cover;
+  padding: 90px 0;
+
+  h1 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 75px;
+  }
+  .button{
+    padding: 18px 64px;
+  }
+}
+.b-mainFooter {
+  padding: 80px 0 40px;
+  color: $lightTextColor;
+  &__inner {
+    display: flex;
+    align-content: space-between;
+    margin: 0 0 40px 0;
+  }
+  @include phone {
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__menu{
+    width: 48%;
+    text-align: right;
+    padding: 0px 100px 0px 0px;
+    li{
+      display: inline-block;
+      line-height: 52px;
+      a{
+        color:$lightTextColor;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 0 20px;
+        font-size: 12px;
+      }
+    }
+  }
+  &__copyright {
+    text-align: center;
+  }
+}
+.b-brand__footer {
+  background: transparent url("./assets/images/mobiamo_logo_grey.svg") no-repeat center center;
+  width: 48px;
+  height: 54px;
+  display: block;
+}
+.social {
+  font-family: "Font Awesome";
+  width: 40%;
+  text-align: center;
+  li {
+    display: inline-block;
+    line-height: 52px;
+  }
+  a {
+    color: $lightTextColor;
+    padding: 0 20px;
+  }
+  .facebook::before { content:"\f09a"; }
+  .google::before   { content:"\f0d5"; }
+  .twitter::before  { content:"\f099"; }
+  .linkedin::before { content:"\f0e1"; }
+}
+@include phone {
+  .b-brand__footer{
+    order: 1;
+  }
+  .b-mainFooter__menu {
+    order: 2;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .social {
+    order: 3;
+    width: 100%;
+  }
+}
+@include phone {
+  .b-mainNav {
+    flex-direction: row;
+    align-content: space-between;
+  }
+  .b-brand {
+    order: 0;
+    width: 50%;
+  }
+  .l-login {
+    width: 50%;
+    margin-bottom: 1vh;
+    text-align: right;
+  }
+  .b-hero {
+    height: auto;
+    &__left {
+      text-align: center;
+      margin-top: 0;
+    }
+    &__heading {
+      font-size: 30px;
+      margin-top: 0;
+    }
+    &__main {
+      img {
+        width: 120px;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}
+.about_heading {
+  font-size: 48px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+
+  &-sm {
+    font-size: 36px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 300;
+  }
+}
+.b-aboutDescription {
+  p {
+    color: $aboutDescrColor;
+    line-height: 2;
+  }
+  &__inner {
+    padding: 60px;
+    margin: -200px auto;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px 0px rgba(28, 60, 77, 0.2);
+    background-color: #ffffff;
+    @include phone {
+      margin: auto;
+      box-shadow: none;
+      padding: 10px;
+    }
+  }
+}
+.b-aboutContacts {
+  margin: 200px 0 0;
+  text-align: center;
+  line-height: 2;
+
+  @include phone {
+    margin: 0;
+  }
+
+  &__head {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:12px;
+    letter-spacing: 1px;
+    color: $aboutDescrColor;
+  }
+
+  article {
+    margin: 20px 0;
+    border-right: 1px solid $textColor;
+    padding: 5px 0;
+
+    @include phone {
+      border-right: none;
+
+      a {
+        padding: 20px 0;
+        border-bottom: 1px solid $textColor;
+      }
+    }
+  }
+}
+.b-aboutContacts .b-aboutContacts__mail_med {
+  border: none;
+
+  a {
+    border: none;
+  }
+}
+.b-hero__coverageHeadDesc {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+}
+.coverage_more {
+  background-color: $partnersBgColor;
+
+  div {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+
+    a {
+      color: $getStartedColor;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.b-coverageTable {
+  table {
+    width: 100%;
+    font-size: 12px;
+
+    th,
+    td {
+      border-bottom:1px solid $borderColor;
+      padding: 14px 0;
+    }
+
+    th {
+      text-align: left;
+      text-transform: uppercase;
+      color: $aboutDescrColor;
+      letter-spacing: 1px;
+      min-width: 150px;
+    }
+
+    td {
+      &:first-child{
+        color:$aboutDescrColor;
+      }
+      &:last-child{
+        text-transform: uppercase;
+      }
+    }
+
+    .flag-icon {
+      margin-right: 10px;
+    }
+
+    @include phone {
+      th:nth-child(3),
+      td:nth-child(3),
+      th:nth-child(4),
+      td:nth-child(4),
+      th:nth-child(5),
+      td:nth-child(5) {
+        display: none;
+      }
+      th:nth-child(2),
+      td:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
+}
+.b-brand__headerBlue {
+  color: $primaryColor;
+}
+.b-carier-stats{
+  padding:100px 0 138px 0;
+  background: $partnersBgColor url('./assets/images/map_grey.svg') no-repeat center center;
+  background-size: contain;
+  @include phone {
+    padding: 50px 0 70px 0;
+  }
+}
+.b-carier-stats_stat-wrap{
+  display:flex;
+  justify-content: space-between;
+  @include phone {
+    flex-direction: column;
+  }
+}
+
+.b-carier-stats__stat__up {
+  color:$primaryColor;
+  font-size:36px;
+  font-weight: bold;
+  text-align:center;
+  border-bottom:1px solid $lightTextColor;
+  @include phone {
+    border-bottom:none;
+  }
+  &:after{
+    content: '';
+    height: 1px;
+    background-color: $lightTextColor;
+    width: 80px;
+    margin: auto;
+    display: none;
+    @include phone {
+      display: block;
+    }
+  }
+}
+
+.b-carier-stats__stat__down{
+  font-size:16px;
+  color:$headingColor;
+  text-align:center;
+  line-height: 3;
+}
+
+.carier-heading{
+  font-size:48px;
+  text-align:center;
+  @include phone {
+    font-size: 36px;
+  }
+}
+
+.b-carier-technology{
+  padding:100px 0 0 0;
+  @include phone {
+    padding: 50px 0 0 0;
+  }
+}
+
+.b-carier-technology__art p{
+  line-height: 1.7;
+}
+
+.technology-sms-img{
+  height: 45px;
+}
+
+.technology-carrier-img{
+  height: 55px;
+}
+
+.technology-app-img{
+  height: 40px;
+}
+
+@media only screen and (min-width:1450px){
+  .b-carier-technology__art .nowrap{
+    white-space: nowrap;
+  }
+}
+
+.b-carier-technology .carier-heading{
+  margin-bottom:100px;
+}
+
+.b-carier-technology__art__heading{
+  margin: 0;
+}
+.b-carier-technology__art__heading:after{
+  content:'';
+  display:block;
+  height: 2px;
+  width: 60px;
+  background: $lightTextColor;
+  margin-top:35px;
+  margin-bottom: 30px;
+  z-index:2;
+}
+
+.l-carier-technology__art__imgwrap{
+  height: 80px;
+}
+
+.b-carier-benefits .carier-heading{
+  margin:100px 0;
+  @include phone {
+    margin: 50px 0;
+  }
+}
+
+.b-carier-monetization .carier-heading {
+  margin: 100px 0 50px 0;
+  @include phone {
+    margin: 50px 0;
+  }
+}
+
+.b-carier-monetization p{
+  text-align: center;
+  margin-top: -30px;
+  line-height: 1.7;
+  @include phone {
+    margin-top: 20px;
+  }
+}
+
+.b-carier-monetization__imgwrap{
+  height:145px;
+  img{
+    display:block;
+    margin:auto;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    @include phone {
+      margin-top: 0;
+      transform: none;
+    }
+  }
+}
+
+.monetization-user-img{
+  height:130px;
+}
+
+.monetization-carrier-img{
+  height:144px;
+}
+
+.monetization-logo-img{
+  height:113px;
+}
+
+.monetization-business-img{
+  height:97px;
+}
+
+.b-carier-benefits .row:nth-child(2), .b-carier-stats .carier-heading{
+  margin-bottom:100px;
+}
+
+.b-carier-benefits .row:nth-child(2) {
+  @include phone {
+    margin-bottom: 0;
+  }
+}
+
+.b-carier-stats .carier-heading {
+  @include phone {
+    margin-bottom: 50px;
+  }
+}
+
+.b-subscribe{
+  padding: 100px 0 70px 0;
+  margin-top: 120px;
+  background: $heroGrad;
+  @include phone {
+    padding: 50px 0 35px 0;
+  }
+  .button__mailto{
+    margin-top:60px;
+  }
+}
+
+.b-hero.b-hero__carrier{
+  overflow:hidden;
+  height: 720px;
+  min-height: 720px;
+}
+
+.b-hero.b-hero__carrier .container{
+   height:auto;
+}
+
+#universe{
+  position:absolute;
+  top:-178px;
+  opacity:0.1;
+  left:-11%;
+  width: 1400px;
+  @include phone {
+    width: 700px;
+    top: -28px;
+    left:-40%;
+  }
+  @include tablet {
+    left: -44%;
+  }
+  @include medium {
+    left: -23%;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .col-xl-4{
+    width: 33.33333333%;
+  }
+}

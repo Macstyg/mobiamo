@@ -1,0 +1,52 @@
+@keyframes step-1 {
+  0%   { opacity: 1; transform: translateY(10%) }
+  1%   { opacity: 1; transform: translateY(0%); }
+  5%   { opacity: 1; }
+  10%  { opacity: 1; }
+  15%  { opacity: 1; }
+  20%  { opacity: 1; }
+  28%  { opacity: 1; }
+  29%  { opacity: 0; }
+  30%  { opacity: 0; }
+  99%  { opacity: 0; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(10%); }
+}
+@keyframes step-2 {
+  0%   { opacity: 0; }
+  29%  { opacity: 0; transform: translateY(10%); }
+  30%  { opacity: 1; transform: translateY(0); }
+  31%  { opacity: 1; }
+  35%  { opacity: 1; }
+  40%  { opacity: 1; }
+  45%  { opacity: 1; }
+  54%  { opacity: 1; }
+  55%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes step-3 {
+  0%   { opacity: 0; }
+  54%  { opacity: 0; transform: translateY(10%); }
+  55%  { opacity: 1; transform: translateY(0); }
+  60%  { opacity: 1; }
+  65%  { opacity: 1; }
+  70%  { opacity: 1; }
+  79%  { opacity: 1; }
+  80%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes step-4 {
+  0%   { opacity: 0; }
+  79%  { opacity: 0; transform: translateY(10%); }
+  80%  { opacity: 1; transform: translateY(0); }
+  85%  { opacity: 1; }
+  90%  { opacity: 1; }
+  99%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes jump {
+  0%   { transform: translateY(20%); }
+  100% { transform: translateX(0); }
+}
+@keyframes rotate {
+  100%{ transform: rotate(360deg); }
+}
